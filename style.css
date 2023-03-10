@@ -1,0 +1,16 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+img{
+    height: 80px;
+    width: 80px;
+}
+
+
+
+li{
+    background-color: red;
+    list-style-type: none;
+}
