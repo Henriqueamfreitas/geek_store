@@ -73,7 +73,7 @@ h1{
     display: flex;
     gap: 17px;
     justify-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-bottom: 7px;
     /* border: 1px solid black; */
 }
