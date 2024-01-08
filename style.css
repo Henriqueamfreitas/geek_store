@@ -1,111 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body{
-    margin: 15px;
-    padding: 0px;
+    margin: .9375rem;
+    padding: 0rem;
     display: flexbox;
     justify-content: space-around;
     align-items: center;    
 }
 
+button{
+    cursor: pointer;
+}
 
 nav{
-    /* border: 2px solid black; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    border-bottom: 2px solid rgba(128, 128, 128, 0.342);
+    padding: .625rem;
+    border-bottom: .125rem solid rgba(128, 128, 128, 0.342);
 }
 
 nav .logo{
-    height: 40px;
-    width: 120px;
+    height: 2.5rem;
+    width: 7.5rem;
 }
 
 
-div .botao1{
-    width: 150px;
-    height: 40px;
+div .button1{
+    width: 9.375rem;
+    height: 2.5rem;
     font-family: 'Roboto', sans-serif;
     color: white;
     background-color:  rgb(10, 152, 254);
-    margin-right: 15px;
+    margin-right: .9375rem;
     border: none;
-    border-radius: 5px;
+    border-radius: .3125rem;
 }
 
-div .botao2{
-    width: 150px;
-    height: 40px;
+div .button1:hover{
+    background-color: rgb(6, 121, 202);
+    transition: .3s ease-in-out;
+}
+
+div .button2{
+    width: 9.375rem;
+    height: 2.5rem;
     font-family: 'Roboto', sans-serif;
-    color:  #0a98fe;
-    background-color:  rgba(10, 152, 254, 0.1);
+    color: #0a98fe;
+    background-color: rgba(10, 152, 254, 0.1);
     border: none;
-    border-radius: 5px;
+    border-radius: .3125rem;
 }
 
+div .button2:hover{
+    background-color: rgba(10, 152, 254, 0.219);
+    transition: .3s ease-in-out;
+}
 
 .container{
-    /* border: 2px solid red; */
     display: flexbox;
     justify-content: space-around;
 }
 
 section{
-    /* border: 2px green solid; */
     overflow-x: auto;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 h1{
-    font-size: 20px;
+    font-size: 1.25rem;
     font-family: 'Roboto', sans-serif;
     font-size: medium;
     font-weight: 600;
     color: #1B1B1B;
 }
 
-.lista{
-    margin: 0px;
-    padding: 0px;
+.ul{
+    margin: 0rem;
+    padding: 0rem;
     list-style-type: none;
     display: flex;
-    gap: 17px;
+    gap: 1.0625rem;
     justify-items: center;
     justify-content: flex-start;
-    margin-bottom: 7px;
-    /* border: 1px solid black; */
+    margin-bottom: .4375rem;
 }
 
-.elementoDaLista{
-    /* border: blue solid 2px; */
-    width: 207 px;
-    height: 275 px;
+.elementList{
+    width: 12.9375rem;
+    height: 17.1875rem;
     display: flexbox;
     justify-content: center;
     align-items: center;
-    border-radius: 8px;
+    border-radius: .5rem;
     background-color: rgba(134, 131, 131,0.1);
+    border: solid .1875rem;
+    border-color: transparent;
 } 
 
-.imagemDoItem{
-    height: 150px;
-    width: 207px;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+.elementList:hover{
+    cursor: pointer;
+    border: rgba(134, 131, 131, 0.37) solid .1875rem;
+    transition: .3s ease-in-out;
+} 
+
+.itemImage{
+    height: 9.375rem;
+    width: 12.9375rem;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
 }
 
-.nomeDoItem{
-    font-size: 20px;
+.itemName{
+    font-size: 1.25rem;
     font-family: 'Roboto', sans-serif;
     font-size: medium;
     color: #1B1B1B;
     text-align: center;
 }
 
-.precoDoItem{
-    font-size: 16px;
+.itemPrice{
+    font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     font-size: medium;
     color: #868383;

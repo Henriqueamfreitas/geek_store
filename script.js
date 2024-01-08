@@ -1,35 +1,27 @@
-////////// PENSANDO NA MARCAÇÃO //////////
-// Criando os elementos e atribuindo-os às variáveis
-let nav = document.createElement("nav")
-let logoSite = document.createElement("img")
-let div = document.createElement("div")
-let buttonProducts = document.createElement("button")
-let buttonContacts = document.createElement("button")
-let main = document.createElement("main")
-let sectionPaintings = document.createElement("section")
-let titlePaintings = document.createElement("h1")
-let sectionActionFigures = document.createElement("section")
-let titleActionFigures = document.createElement("h1")
+let nav = document.createElement('nav')
+let logoSite = document.createElement('img')
+let div = document.createElement('div')
+let buttonProducts = document.createElement('button')
+let buttonContacts = document.createElement('button')
+let main = document.createElement('main')
+let sectionPaintings = document.createElement('section')
+let titlePaintings = document.createElement('h1')
+let sectionActionFigures = document.createElement('section')
+let titleActionFigures = document.createElement('h1')
 
+logoSite.src = './logo.svg' 
+buttonProducts.innerText = 'Products'
+buttonContacts.innerText = 'Contacts'
+titlePaintings.innerText = 'Paintings'
+titleActionFigures.innerText = 'Action Figures'
 
-// Atribuindo valor aos elementos
-logoSite.src = "./logo.svg" 
-buttonProducts.innerText = "Products"
-buttonContacts.innerText = "Contacts"
-titlePaintings.innerText = "Paintings"
-titleActionFigures.innerText = "Action Figures"
+logoSite.className = 'logo'
+buttonProducts.className = 'button1'
+buttonContacts.className = 'button2'
+main.className = 'container'
+sectionPaintings.className = 'section-list-Frames'
+sectionActionFigures.className = 'section-list-Figure'
 
-
-// Atribuindo classes aos elementos
-logoSite.className = "logo"
-buttonProducts.className = "botao1"
-buttonContacts.className = "botao2"
-main.className = "container"
-sectionPaintings.className = "secao-list-Frames"
-sectionActionFigures.className = "secao-list-Figure"
-
-
-// Determinando a hierarquia dos elementos
 document.querySelector('body').appendChild(nav)
 document.querySelector('body').appendChild(main)
 nav.appendChild(logoSite)
@@ -41,42 +33,38 @@ main.appendChild(sectionActionFigures)
 sectionPaintings.appendChild(titlePaintings)
 sectionActionFigures.appendChild(titleActionFigures)
 
-
-
-////////// PENSANDO NAS FUNCIONALIDADES //////////
-// Criando Lista itens
 let itens = [
-    produto1 = {
+    product1 = {
         image: './assets/img/painting/clock.jpg',
         name: 'Smartwatch',
         price: 'R$100,00',
         type: 'Painting'
     },
-    produto2 = {
+    product2 = {
         image: './assets/img/painting/gamepad.jpg',
         name: 'Controle Playstation',
         price: 'R$100,00',
         type: 'Painting'
     },
-    produto3 = {
+    product3 = {
         image: './assets/img/painting/personagem.jpg',
         name: 'Robot',
         price: 'R$100,00',
         type: 'Painting'
     },
-    produto4 = {
+    product4 = {
         image: './assets/img/actions/animewoman.jpg',
         name: 'Anime Woman',
         price: 'R$100,00',
         type: 'Action Figures'
     },
-    produto5 = {
+    product5 = {
         image: './assets/img/actions/dragonballpersonagem.jpg',
         name: 'Goku Super Saiyajin',
         price: 'R$100,00',
         type: 'Action Figures'
     },
-    produto6 = {
+    product6 = {
         image: './assets/img/actions/starwarspersonagem.jpg',
         name: 'Sr Yoda',
         price: 'R$100,00',
@@ -84,61 +72,50 @@ let itens = [
     },
 ];
 
-
-// Criando listas listFigures e listFrames
 let listFrames = []
 let listFigures = []
 
-
-// Criando função separaItens
-function separaItens(list){
+function separateItens(list){
     for (let i=0;i<list.length;i+=1){
-        if(list[i].type == "Painting"){
+        if(list[i].type === 'Painting'){
             listFrames.push(list[i])
-        } else if(list[i].type == "Action Figures")
+        } else if(list[i].type === 'Action Figures')
         listFigures.push(list[i])
     }
 }
-separaItens(itens)
+separateItens(itens)
 
-let secaolistFigure = document.getElementsByClassName('secao-list-Figure')[0]
-let secaolistFrames = document.getElementsByClassName('secao-list-Frames')[0]
+let sectionlistFigure = document.getElementsByClassName('section-list-Figure')[0]
+let sectionlistFrames = document.getElementsByClassName('section-list-Frames')[0]
 
-
-
-////////// PENSANDO NA SOLUÇÃO //////////
-// Função
-function adicionaListaNasSecoes(list, section){
-    // Criando a Lista
-    let lista = document.createElement('ul')
-    lista.className = "lista" 
+function addListIntoSection(list, section){
+    let ul = document.createElement('ul')
+    ul.className = 'ul' 
     for(let i = 0; i < list.length; i++){
-        // Criando o elemento de lista
-            let elementoLista0 = document.createElement('li')
-            elementoLista0.className = "elementoDaLista"
-        // Criando um elemento do tipo span para renderizar o nome
-            let image = document.createElement('img')
-            let nome = document.createElement('h2')
-            let price = document.createElement('p')
-        // Atribuindo classes aos elementos
-            image.className = "imagemDoItem"
-            nome.className = "nomeDoItem"
-            price.className = "precoDoItem"
-        // Inserindo um valor ao nosso span, usando o valor nome do nosso objeto. 
-            image.src = `${list[i].image}`
-            nome.innerText = `${list[i].name}`
-            price.innerText = `${list[i].price}`
-        // Inserimos no nosso elemento de lista, o elemento span//já com o valor nome do nosso objeto.  
-            elementoLista0.appendChild(image)
-            elementoLista0.appendChild(nome)
-            elementoLista0.appendChild(price)
-        // Inserimos o nosso elemento de lista, já com o nosso elemento//span a nossa secao de produtos 'secao-list-figures'. 
-            lista.appendChild(elementoLista0)
-        }        
-        section.appendChild(lista)
+        let elementList = document.createElement('li')
+        elementList.className = 'elementList'
+        let image = document.createElement('img')
+        let itemName = document.createElement('h2')
+        let price = document.createElement('p')
+        image.className = 'itemImage'
+        itemName.className = 'itemName'
+        price.className = 'itemPrice'
+        
+        image.src = `${list[i].image}`
+        itemName.innerText = `${list[i].name}`
+        price.innerText = `${list[i].price}`
+
+        elementList.appendChild(image)
+        elementList.appendChild(itemName)
+        elementList.appendChild(price)
+
+        ul.appendChild(elementList)
+    }        
+    section.appendChild(ul)
 }
-adicionaListaNasSecoes(listFrames, secaolistFrames)
-adicionaListaNasSecoes(listFigures, secaolistFigure)
+
+addListIntoSection(listFrames, sectionlistFrames)
+addListIntoSection(listFigures, sectionlistFigure)
 
 
 
